@@ -2,9 +2,8 @@ const fs = require('fs')
 
 let inputFiles = fs.readdirSync('./input')
 
-inputFiles.forEach((file, index) => {
+inputFiles.forEach(file => {
     if(file.endsWith('.obj')){
-        console.log(`./input/${file}`)
         let fileData = fs.readFileSync(`./input/${file}`, 'utf-8')
         let fileDataArray = fileData.split('\r\n')
         fileDataArray.splice(0, 4)
